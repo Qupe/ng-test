@@ -10,8 +10,7 @@ export class PhotosService {
   count = 20;
 
   getPhotos() {
-
-    const url = 'https://api.instagram.com/v1/users/691623/media/recent?access_token=' + TOKEN + '&callback=JSONP_CALLBACK';
+    const url = 'https://api.instagram.com/v1/users/691623/media/recent?access_token=' + TOKEN + '&count=' + this.count + '&callback=JSONP_CALLBACK';
 
     return this.jsonp.request(url).map(response => {
       return response.json().data;

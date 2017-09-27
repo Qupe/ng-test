@@ -16,19 +16,19 @@ export class ConvertDatePipe implements PipeTransform {
       year = Math.floor(diff / 31536000000);
 
     if (diff < 1000) {
-      return ' только что';
+      return ' now';
     } else if (sec < 60) {
-      return sec + 's';
+      return sec + 'sec';
     } else if (min < 60) {
-      return min + 'm';
+      return min + 'min';
     } else if (hour < 24) {
-      return hour + 'h';
+      return hour + 'hour';
     } else if (day < 28) {
-      return day + 'd';
+      return day + 'day';
     } else if (month < 12) {
-      return month + 'm';
+      return month + 'month';
     } else if (year < 100) {
-      return year + 'y';
+      return year + 'year';
     }
   }
 

@@ -15,7 +15,6 @@ export class AppComponent {
   photos = [];
 
   ngOnInit() {
-    // this.photos = this.photosService.data;
     this.photosService.getPhotos().subscribe(photos => {
       this.photos = photos;
     });
