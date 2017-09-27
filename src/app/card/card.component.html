@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card__header">
+    <img class="card__header-avatar" src="{{ photo.user.profile_picture }}" alt=""/>
+    <div class="card__header-desc">
+      <a href="https://www.instagram.com/{{ photo.user.username }}/" class="card__header-desc-name">
+        {{ photo.user.username }}
+      </a><br/>
+      <span class="card__header-desc-place">{{ photo.location ? photo.location.name : '' }}</span>
+    </div>
+    <div class="card__header-time">{{ photo.created_time | convertDate }}</div>
+  </div>
+  <a href="{{ photo.link}}" class="card__content">
+    <img class="card__content-image" src="{{ photo.images.standard_resolution.url }}" alt=""/>
+  </a>
+  <div class="card__footer">
+    <img class="card__footer-heart" (click)="onClick()" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzc0LDMxYy01OC4yMTQsMC05Ny40ODIsMjkuNS0xMTgsNTAuNDA0QzIzNS40ODIsNjAuNSwxOTYuMjE0LDMxLDEzOCwzMUM1Ny4wNDQsMzEsMCwxMDIuODU3LDAsMTg3LjY2NyAgICBDMCwzMTguODIsMTMwLjQ5Nyw0MTkuMDEyLDI0Ni44NjEsNDc4Ljc5YzUuNzM2LDIuOTQ3LDEyLjU0MiwyLjk0NywxOC4yNzgsMEMzODEuNTYzLDQxOC45ODIsNTEyLDMxOC44ODgsNTEyLDE4Ny42NjcgICAgQzUxMiwxMDMuMDA3LDQ1NS4wODUsMzEsMzc0LDMxeiBNMjU2LDQzOC40NDlDMTU3Ljg2NSwzODYuNTk2LDQwLDI5Ny45ODIsNDAsMTg3LjY2N0M0MCwxMjYuOTIyLDc4LjAzNSw3MSwxMzgsNzEgICAgYzQ3LjMwNywwLDg0Ljc2OCwyNy44ODIsMTAxLjIyLDUyLjM4MmMzLjY1LDUuNzUsOS45MjMsOS4xNjcsMTYuNzM2LDkuMmM2Ljg1MSwwLjAyNCwxMy4xNTMtMy41MDQsMTYuODU0LTkuMjQ1ICAgIEMyNzMuMTQ3LDEyMi44MTMsMzA3LjMyMiw3MSwzNzQsNzFjNTkuOTc4LDAsOTgsNTUuOTQ1LDk4LDExNi42NjdDNDcyLDI5Ny45MTMsMzUzLjkyOCwzODYuNzA1LDI1Niw0MzguNDQ5eiIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="/>
+    <span class="card__footer-count">{{ photo.likes.count }}</span>
+    <div class="card__footer-description">{{ photo.caption ? photo.caption.text : '' }}</div>
+  </div>
+</div>
